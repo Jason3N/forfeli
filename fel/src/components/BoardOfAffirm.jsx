@@ -7,7 +7,7 @@ function BoardOfAffirm() {
   const [newAffirmation, setNewAffirmation] = useState('');
 
   const fetchAffirmations = () => {
-    axios.get("http://localhost:5001/affirmations")
+    axios.get("https://de4e-2603-8080-6b01-3cd1-4c3e-eb56-484b-a40b.ngrok-free.app/affirmations")
       .then(response => {
         console.log(response.data)
         setAffirmations(response.data);
@@ -23,7 +23,7 @@ function BoardOfAffirm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:5001/affirmations", {
+    axios.post("https://de4e-2603-8080-6b01-3cd1-4c3e-eb56-484b-a40b.ngrok-free.app/affirmations", {
       affirmation: newAffirmation
     })
     .then(response => {
