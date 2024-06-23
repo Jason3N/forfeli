@@ -71,11 +71,6 @@ function App() {
               <BoardOfAffirm />
             </div>
           )}
-          {page === 3 && (
-            <div>
-              This is page 3.
-            </div>
-          )}
         </div>
       </div>
     </div>
