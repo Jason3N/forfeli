@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 
-
 const app = express();
 const port = process.env.PORT || 5001;
 
@@ -24,11 +23,11 @@ connection.on('error', (err) => {
 });
 
 app.use(express.json()); // Middleware to parse JSON
-app.use(cors())
+app.use(cors());
 
 const affirmSchema = new mongoose.Schema({
   affirmation: String,
-    date: { type: Date, default: Date.now }
+  date: { type: Date, default: Date.now }
 });
 
 const Affirmation = mongoose.model('feliProj', affirmSchema, 'feliAffirm');
@@ -58,3 +57,5 @@ app.get('/affirmations', async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
+
+module.exports = app;
