@@ -23,7 +23,13 @@ connection.on('error', (err) => {
 });
 
 app.use(express.json()); // Middleware to parse JSON
-app.use(cors());
+app.use(cors(
+    {
+        origin: ['https://forfeli.vercel.app/'],
+        methods: ['GET', 'POST'],
+        credentials: true,
+    }
+));
 
 const affirmSchema = new mongoose.Schema({
   affirmation: String,
